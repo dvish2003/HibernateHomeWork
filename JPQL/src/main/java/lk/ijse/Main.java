@@ -1,17 +1,55 @@
 package lk.ijse;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+import lk.ijse.Entity.Customer;
+import lk.ijse.config.FactoryConfiguration;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        //SELECT------------------------------------------------
+
+              /*  Query query = session.createQuery("select c from Customer c");
+                List<Customer> cuList = query.getResultList();
+
+                for (Customer customer : cuList){
+                    System.out.println(customer.getId() + customer.getName() );
+                }*/
+
+        //UPDATE--------------------------------------------------------
+
+   /*     Query query1 = session.createQuery("update Customer  c set  c.name = :name  where c.id = :Id");
+
+        query1.setParameter("name","sanduni");
+        query1.setParameter("Id",2);
+        query1.executeUpdate();
+*/
+
+        //DELETE-------------------------------------------------------
+
+     /*   Query query2 = session.createQuery("delete from Customer c where c.id = :Id");
+        query2.setParameter("Id",2);
+        query2.executeUpdate();
+*/
+
+        //SEARCH BY ID----------------------------------------------------
+
+   /*     Query query3 = session.createQuery("select s from Customer s where s.no = :Id");
+        query3.setParameter("Id",3);
+        List<Customer> stList = query3.getResultList();
+
+        for (Customer customer: stList){
+            System.out.println(customer.getId());
         }
+*/
+
+
     }
 }
