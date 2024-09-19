@@ -32,6 +32,7 @@ public class Main {
         query1.executeUpdate();
 */
 
+
         //DELETE-------------------------------------------------------
 
      /*   Query query2 = session.createQuery("delete from Customer c where c.id = :Id");
